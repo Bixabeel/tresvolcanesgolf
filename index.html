@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tres Volcanes Golf & Country Club | Vive el Club en Guanacaste</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Tres Volcanes Golf & Country Club en Guanacaste: golf 18/9 hoyos, twilight, padel, piscina/day pass, restaurante, eventos, discovery tour y Signature Living Lots." />
+  <meta property="og:title" content="Tres Volcanes | Golf & Country Club en Guanacaste" />
+  <meta property="og:description" content="Elige tu experiencia: Golf, Day Pass & Restaurante, Eventos, Discovery Tour o Signature Living Lots." />
+  <meta name="theme-color" content="#1a472a" />
+
+  <!-- Fonts / Icons / Effects -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Swiper / AOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#1a472a;
+      --primary-2:#2d5a3a;
+      --secondary:#d4af37;
+      --secondary-2:#e8c766;
+      --accent:#0d2d1a;
+
+      --bg:#fefefe;
+      --ink:#121212;
+      --muted:#6c757d;
+
+      --card:#ffffff;
+      --glass: rgba(255,255,255,.10);
+
+      --shadow:0 10px 30px rgba(0,0,0,.10);
+      --shadow-2:0 18px 55px rgba(0,0,0,.18);
+      --radius:18px;
+      --transition: all .28s ease;
+      --focus: 0 0 0 4px rgba(212,175,55,.22);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.15}
+    a{color:inherit}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+
+    /* Accessibility */
+    :focus-visible{outline:none; box-shadow: var(--focus); border-radius:12px}
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    }
+
+    /* Header */
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+      background:rgba(26,71,42,.92);
+      backdrop-filter: blur(10px);
+      padding:14px 0;
+      transition:var(--transition);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    header.scrolled{padding:10px 0; box-shadow: var(--shadow)}
+    .header-container{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px;min-width:240px}
+    .logo-badge{
+      width:44px;height:44px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(212,175,55,.22), rgba(255,255,255,.08));
+      border:1px solid rgba(255,255,255,.14);
+    }
+    .logo-text{color:#fff;font-weight:700;font-size:1.05rem;letter-spacing:.4px}
+    .logo-text span{color:var(--secondary);font-weight:700}
+
+    nav ul{display:flex;gap:24px;list-style:none;align-items:center}
+    nav a{
+      color:rgba(255,255,255,.92);
+      text-decoration:none;
+      font-weight:600;
+      font-size:.95rem;
+      position:relative;
+      padding:6px 0;
+      transition:var(--transition);
+    }
+    nav a:hover{color:var(--secondary)}
+    nav a:after{
+      content:'';
+      position:absolute;left:0;bottom:0;height:2px;width:0;
+      background:var(--secondary);
+      transition:var(--transition);
+      opacity:.9;
+    }
+    nav a:hover:after{width:100%}
+
+    .cta-buttons{display:flex;gap:12px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;
+      padding:12px 20px;border-radius:999px;
+      font-weight:800;text-decoration:none;border:0;cursor:pointer;
+      transition:var(--transition);
+      user-select:none;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .btn-primary{background:var(--secondary);color:var(--primary)}
+    .btn-primary:hover{background:var(--secondary-2);transform:translateY(-2px);box-shadow:var(--shadow)}
+    .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.26)}
+    .btn-ghost:hover{border-color:rgba(212,175,55,.75);color:var(--secondary);transform:translateY(-2px)}
+
+    .mobile-menu-btn{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer}
+
+    /* Hero */
+    .hero{
+      min-height:100vh;
+      padding-top:92px;
+      display:flex;
+      align-items:stretch;
+      position:relative;
+      color:#fff;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;inset:0;
+      background:
+        radial-gradient(900px 450px at 20% 20%, rgba(212,175,55,.22), transparent 60%),
+        radial-gradient(900px 450px at 80% 0%, rgba(45,90,58,.35), transparent 55%),
+        linear-gradient(rgba(0,0,0,.70), rgba(0,0,0,.56));
+      z-index:1;
+    }
+    .hero-bg{
+      position:absolute;inset:0;
+      background-size:cover;
+      background-position:center;
+      transform:scale(1.03);
+      filter:saturate(1.05) contrast(1.05);
+      z-index:0;
+      transition: opacity .45s ease, transform .8s ease;
+    }
+    .hero-bg.is-switching{opacity:.3; transform:scale(1.06)}
+    .hero-inner{
+      position:relative;z-index:2;
+      display:flex;align-items:center;
+      padding:48px 0 40px;
+      width:100%;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:28px;
+      align-items:center;
+      width:100%;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      font-weight:800;
+      font-size:.85rem;
+      letter-spacing:.35px;
+      width:max-content;
+      margin-bottom:16px;
+    }
+    .kicker i{color:var(--secondary)}
+    .hero h1{
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      margin-bottom:14px;
+      text-shadow: 2px 2px 18px rgba(0,0,0,.35);
+    }
+    .hero p{
+      font-size:1.08rem;
+      color:rgba(255,255,255,.88);
+      max-width:58ch;
+      margin-bottom:20px;
+    }
+    .highlight{color:var(--secondary)}
+
+    /* Intent Selector */
+    .intent-panel{
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: 0 22px 60px rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+    }
+    .intent-title{
+      font-family:'Montserrat',sans-serif;
+      font-weight:900;
+      letter-spacing:.3px;
+      font-size:.98rem;
+      margin-bottom:10px;
+      color:rgba(255,255,255,.92);
+    }
+    .intent-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .intent-btn{
+      text-align:left;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(13,45,26,.35);
+      color:#fff;
+      cursor:pointer;
+      transition: var(--transition);
+    }
+    .intent-btn:hover{transform: translateY(-2px); border-color: rgba(212,175,55,.55)}
+    .intent-btn.active{
+      background: linear-gradient(135deg, rgba(212,175,55,.22), rgba(45,90,58,.22));
+      border-color: rgba(212,175,55,.75);
+    }
+    .intent-btn .top{
+      display:flex;align-items:center;gap:10px;
+      font-weight:900;font-size:.95rem;
+      margin-bottom:3px;
+    }
+    .intent-btn .top i{color:var(--secondary)}
+    .intent-btn .sub{font-size:.84rem;color:rgba(255,255,255,.78);line-height:1.3}
+
+    /* Trust Bar */
+    .trustbar{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .trust-pill{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 12px;border-radius:999px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      font-weight:800;
+      font-size:.85rem;
+      color:rgba(255,255,255,.9);
+    }
+    .trust-pill i{color:var(--secondary)}
+
+    /* Hero CTAs */
+    .hero-cta{
+      display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;
+    }
+
+    /* Scroll cue */
+    .scroll-cue{
+      position:absolute;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      z-index:3;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+      color:rgba(255,255,255,.75);
+      font-weight:800;
+      font-size:.8rem;
+      letter-spacing:.3px;
+      user-select:none;
+    }
+    .mouse{
+      width:26px;height:40px;border-radius:999px;
+      border:2px solid rgba(255,255,255,.45);
+      display:grid;place-items:start center;
+      padding-top:8px;
+    }
+    .mouse span{
+      width:4px;height:8px;border-radius:999px;
+      background: rgba(212,175,55,.9);
+      animation: wheel 1.25s infinite;
+    }
+    @keyframes wheel{
+      0%{transform:translateY(0);opacity:.95}
+      60%{transform:translateY(10px);opacity:.55}
+      100%{transform:translateY(0);opacity:.95}
+    }
+
+    /* Sections */
+    .section{padding:92px 0}
+    .section-title{text-align:center;margin-bottom:46px}
+    .section-title h2{font-size:clamp(1.9rem, 3vw, 2.85rem);color:var(--primary);margin-bottom:12px}
+    .section-title p{color:var(--muted);max-width:76ch;margin:0 auto;font-size:1.06rem}
+
+    /* Quick Actions (sticky) */
+    .quick-actions{
+      position:fixed;
+      left:50%;
+      bottom:16px;
+      transform:translateX(-50%);
+      z-index:1200;
+      display:flex;
+      gap:10px;
+      padding:10px;
+      border-radius:999px;
+      background: rgba(13,45,26,.72);
+      border:1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.28);
+    }
+    .qa{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      color:#fff;
+      text-decoration:none;
+      font-weight:900;
+      font-size:.86rem;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      transition: var(--transition);
+    }
+    .qa i{color:var(--secondary)}
+    .qa:hover{transform:translateY(-2px);border-color: rgba(212,175,55,.55)}
+
+    /* Experiences */
+    .experiences-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:18px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:var(--transition);
+      border:1px solid rgba(18,18,18,.06);
+    }
+    .card:hover{transform:translateY(-8px);box-shadow:var(--shadow-2)}
+    .card-img{height:190px;background-size:cover;background-position:center}
+    .card-body{padding:18px}
+    .card-body h3{color:var(--primary);margin-bottom:8px;font-size:1.5rem}
+    .card-body p{color:var(--muted);margin-bottom:14px}
+    .card-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Split section */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:22px;
+      align-items:center;
+    }
+    .panel{
+      border-radius:var(--radius);
+      background: linear-gradient(135deg, rgba(26,71,42,.08), rgba(212,175,55,.06));
+      border:1px solid rgba(18,18,18,.06);
+      padding:22px;
+      box-shadow: var(--shadow);
+    }
+    .panel h3{color:var(--primary);font-size:2rem;margin-bottom:10px}
+    .bullets{margin-top:10px;display:grid;gap:10px}
+    .bullet{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:12px;border-radius:16px;
+      background:#fff;border:1px solid rgba(18,18,18,.06);
+    }
+    .bullet i{color:var(--secondary);margin-top:2px}
+
+    /* App section (kept) */
+    .app-section{
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color:#fff;
+    }
+    .app-container{display:flex;gap:44px;align-items:center}
+    .app-content{flex:1}
+    .app-content h2{font-size:clamp(1.9rem, 3vw, 2.8rem);margin-bottom:12px}
+    .app-content p{color:rgba(255,255,255,.86)}
+    .app-features{margin:22px 0;display:grid;gap:14px}
+    .app-feature{display:flex;gap:12px;align-items:flex-start}
+    .app-feature i{color:var(--secondary);font-size:1.35rem;width:26px;margin-top:3px}
+    .app-preview{flex:1;display:flex;justify-content:center}
+    .app-phone{
+      width:300px;height:600px;background:#111;border-radius:42px;padding:18px;
+      box-shadow: 0 30px 70px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .app-screen{
+      width:100%;height:100%;
+      background: linear-gradient(180deg, #0d2d1a 0%, #1a472a 100%);
+      border-radius:28px;position:relative;overflow:hidden;
+    }
+
+    /* Testimonials */
+    .testimonial-slider{max-width:860px;margin:0 auto}
+    .testimonial-card{
+      background:#fff;border-radius:var(--radius);
+      padding:34px;box-shadow:var(--shadow);
+      text-align:center;border:1px solid rgba(18,18,18,.06);
+      margin:18px;
+    }
+    .testimonial-text{font-size:1.12rem;font-style:italic;color:var(--ink);margin-bottom:14px}
+    .testimonial-author{font-weight:900;color:var(--primary)}
+
+    /* Lots */
+    .lots-section{background:#f8f9fa}
+    .lots-container{
+      display:grid  ;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:18px;
+    }
+    .lot-img{height:220px;background-size:cover;background-position:center}
+
+    /* Footer */
+    footer{background:var(--accent);color:#fff;padding:72px 0 28px}
+    .footer-content{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:30px;
+      margin-bottom:38px;
+    }
+    .footer-column h3{color:var(--secondary);margin-bottom:16px;font-size:1.15rem}
+    .footer-column ul{list-style:none}
+    .footer-column li{margin-bottom:10px;color:rgba(255,255,255,.88)}
+    .footer-column a{color:rgba(255,255,255,.82);text-decoration:none}
+    .footer-column a:hover{color:var(--secondary)}
+    .social-links{display:flex;gap:12px;margin-top:12px}
+    .social-links a{
+      width:40px;height:40px;border-radius:50%;
+      display:grid;place-items:center;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      transition:var(--transition);
+    }
+    .social-links a:hover{background:var(--secondary);color:var(--primary);transform:translateY(-2px)}
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.10);
+      padding-top:18px;
+      text-align:center;
+      color:rgba(255,255,255,.75);
+      font-size:.92rem;
+    }
+
+    /* Modal */
+    .modal{
+      display:none;position:fixed;inset:0;
+      background:rgba(0,0,0,.80);
+      z-index:2000;
+      justify-content:center;
+      align-items:center;
+      padding:18px;
+    }
+    .modal-content{
+      background:#fff;border-radius:var(--radius);
+      padding:34px;max-width:640px;width:100%;
+      position:relative;
+      animation: modalIn .35s ease;
+      border:1px solid rgba(18,18,18,.08);
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    }
+    @keyframes modalIn{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+    .close-modal{position:absolute;right:16px;top:16px;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--muted)}
+    .form-group{margin-bottom:14px}
+    .form-group label{display:block;margin-bottom:7px;font-weight:900;color:var(--primary)}
+    .form-group input,.form-group select,.form-group textarea{
+      width:100%;padding:12px 14px;border-radius:12px;
+      border:1px solid rgba(18,18,18,.14);
+      transition:var(--transition);
+      font-family:'Montserrat',sans-serif;
+      font-size:1rem;
+    }
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+      border-color: rgba(26,71,42,.55);
+      box-shadow: var(--focus);
+      outline:none;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px){
+      .hero-grid{grid-template-columns:1fr;gap:18px}
+      .app-container{flex-direction:column}
+      nav ul{gap:18px}
+    }
+    @media (max-width: 768px){
+      .mobile-menu-btn{display:block}
+      nav{
+        position:fixed;top:74px;left:-100%;
+        width:100%;
+        background: rgba(26,71,42,.98);
+        padding:22px;
+        transition: var(--transition);
+        border-top:1px solid rgba(255,255,255,.08);
+      }
+      nav.active{left:0}
+      nav ul{flex-direction:column;align-items:flex-start}
+      .cta-buttons{display:none}
+      .quick-actions{width:calc(100% - 18px);justify-content:space-between}
+      .qa span{display:none}
+      .split{grid-template-columns:1fr}
+      .intent-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container header-container">
+      <div class="logo" aria-label="Tres Volcanes Golf & Country Club">
+        <div class="logo-badge" aria-hidden="true">
+          <i class="fas fa-mountain" style="color: var(--secondary);"></i>
+        </div>
+        <div class="logo-text">TRES VOLCANES <span>GOLF & COUNTRY CLUB</span></div>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav id="mainNav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#experiences">Experiencias</a></li>
+          <li><a href="#why">Por qué aquí</a></li>
+          <li><a href="#app">GolfPlay App</a></li>
+          <li><a href="#lots">Signature Lots</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-ghost" id="loginBtn"><i class="fas fa-user-lock"></i>Acceso Miembros</a>
+        <a href="#" class="btn btn-primary" id="reserveBtn"><i class="fas fa-calendar-check"></i>Reservar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Actions -->
+  <div class="quick-actions" aria-label="Acciones rápidas">
+    <a class="qa" href="#experiences" data-intentjump="golf"><i class="fas fa-golf-ball-tee"></i><span>Golf</span></a>
+    <a class="qa" href="#experiences" data-intentjump="daypass"><i class="fas fa-person-swimming"></i><span>Day Pass</span></a>
+    <a class="qa" href="#experiences" data-intentjump="events"><i class="fas fa-champagne-glasses"></i><span>Eventos</span></a>
+    <a class="qa" href="#lots" data-intentjump="lots"><i class="fas fa-map-location-dot"></i><span>Lotes</span></a>
+    <a class="qa" href="#contact" data-intentjump="tour"><i class="fas fa-route"></i><span>Discovery</span></a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg" style="background-image:url('https://images.unsplash.com/photo-1587174486073-ae7c6e292c90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-grid">
+        <div class="animate__animated animate__fadeIn">
+          <div class="kicker"><i class="fas fa-location-dot"></i> Guanacaste, Costa Rica · Golf & Country Club</div>
+
+          <h1 id="heroTitle">
+            Elige tu experiencia. <span class="highlight">Vive el Club</span>.
+          </h1>
+
+          <p id="heroLead">
+            En Tres Volcanes, todo está diseñado para que el día fluya: golf (18/9/twilight), padel, piscina/day pass, restaurante, eventos y Signature Living Lots. Tú eliges el motivo. Nosotros diseñamos el momento.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#experiences" class="btn btn-primary" id="heroPrimaryCta"><i class="fas fa-compass"></i>Explorar Experiencias</a>
+            <a href="#lots" class="btn btn-ghost" id="heroSecondaryCta"><i class="fas fa-crown"></i>Ver Signature Lots</a>
+          </div>
+
+          <div class="trustbar" aria-label="Pruebas de confianza">
+            <div class="trust-pill"><i class="fas fa-pen-nib"></i> Diseñado por Pete Dye</div>
+            <div class="trust-pill"><i class="fas fa-leaf"></i> Distinción ecológica (Audubon)</div>
+            <div class="trust-pill"><i class="fas fa-golf-ball"></i> Rental clubs disponibles</div>
+            <div class="trust-pill"><i class="fas fa-car-side"></i> A minutos de resorts y playas</div>
+          </div>
+        </div>
+
+        <aside class="intent-panel" data-aos="fade-left" data-aos-delay="150" aria-label="Selector de intención">
+          <div class="intent-title">¿Qué vienes a vivir hoy?</div>
+          <div class="intent-grid">
+            <button class="intent-btn active" type="button" data-intent="golf">
+              <div class="top"><i class="fas fa-golf-ball-tee"></i>Golf</div>
+              <div class="sub">18 / 9 hoyos · Twilight · rental clubs</div>
+            </button>
+            <button class="intent-btn" type="button" data-intent="daypass">
+              <div class="top"><i class="fas fa-person-swimming"></i>Day Pass</div>
+              <div class="sub">Piscina · relax · día perfecto</div>
+            </button>
+            <button class="intent-btn" type="button" data-intent="restaurant">
+              <div class="top"><i class="fas fa-utensils"></i>Restaurante</div>
+              <div class="sub">Club house · aire acondicionado</div>
+            </button>
+            <button class="intent-btn" type="button" data-intent="events">
+              <div class="top"><i class="fas fa-champagne-glasses"></i>Eventos</div>
+              <div class="sub">Parties · corporativo · celebraciones</div>
+            </button>
+            <button class="intent-btn" type="button" data-intent="lots">
+              <div class="top"><i class="fas fa-map-location-dot"></i>Signature Lots</div>
+              <div class="sub">Inversión · vista · estilo de vida</div>
+            </button>
+            <button class="intent-btn" type="button" data-intent="tour">
+              <div class="top"><i class="fas fa-route"></i>Discovery Tour</div>
+              <div class="sub">Tu mejor “primer día” aquí</div>
+            </button>
+          </div>
+
+          <div style="margin-top:14px; color: rgba(255,255,255,.86); font-weight:800; font-size:.92rem;">
+            Selecciona una opción y verás el mensaje adaptarse. Esto guía tu decisión sin esfuerzo.
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="#" class="btn btn-primary" id="intentCta"><i class="fas fa-calendar-check"></i>Reservar ahora</a>
+            <a href="#contact" class="btn btn-ghost" id="intentAlt"><i class="fas fa-message"></i>Hablar con el club</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <div class="mouse"><span></span></div>
+      <div>Desliza</div>
+    </div>
+  </section>
+
+  <!-- Experiences -->
+  <section class="section" id="experiences">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Experiencias <span class="highlight">claras</span>, memorables</h2>
+        <p>
+          En lugar de mostrar “todo a la vez”, aquí cada experiencia tiene su ruta: reserva, información y siguientes pasos.
+          El usuario entiende, elige y avanza.
+        </p>
+      </div>
+
+      <div class="experiences-grid">
+        <div class="card" data-aos="fade-up" data-aos-delay="50" data-anchor-intent="golf">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1587174486073-ae7c6e292c90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-body">
+            <h3>Golf · 18 / 9 · Twilight</h3>
+            <p>La sensación de “hoy sí juego” sin fricción: llega, renta palos si lo necesitas y disfruta la ronda con el ritmo perfecto.</p>
+            <div class="card-actions">
+              <a href="#" class="btn btn-primary" id="bookGolfBtn"><i class="fas fa-golf-ball-tee"></i>Reservar tee time</a>
+              <a href="#" class="btn btn-ghost"><i class="fas fa-circle-info"></i>Ver opciones</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="100" data-anchor-intent="daypass">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-body">
+            <h3>Pool Day Pass</h3>
+            <p>Un día completo de descanso y disfrute. Perfecto para familias y grupos: aire libre, calma y un ambiente de club.</p>
+            <div class="card-actions">
+              <a href="#" class="btn btn-primary"><i class="fas fa-person-swimming"></i>Solicitar day pass</a>
+              <a href="#contact" class="btn btn-ghost"><i class="fas fa-phone"></i>Consultar horarios</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="150" data-anchor-intent="restaurant">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-body">
+            <h3>Restaurante & Club House</h3>
+            <p>Comida que se recuerda. Espacio con aire acondicionado, ideal para cerrar el día con conversación y vista.</p>
+            <div class="card-actions">
+              <a href="#" class="btn btn-primary"><i class="fas fa-utensils"></i>Reservar mesa</a>
+              <a href="#contact" class="btn btn-ghost"><i class="fas fa-location-dot"></i>Cómo llegar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="200" data-anchor-intent="events">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-body">
+            <h3>Parties & Eventos</h3>
+            <p>Cuando el lugar se siente “perfecto”, la decisión se vuelve fácil. Nosotros ayudamos a que el evento fluya de inicio a fin.</p>
+            <div class="card-actions">
+              <a href="#" class="btn btn-primary" id="eventBtn"><i class="fas fa-champagne-glasses"></i>Cotizar evento</a>
+              <a href="#contact" class="btn btn-ghost"><i class="fas fa-message"></i>Hablar con el equipo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="250" data-anchor-intent="lots">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-body">
+            <h3>Signature Living Lots</h3>
+            <p>No es solo un lote: es la posibilidad de construir una vida con vistas, comunidad y un estándar de club que se siente todos los días.</p>
+            <div class="card-actions">
+              <a href="#lots" class="btn btn-primary"><i class="fas fa-crown"></i>Ver lotes</a>
+              <a href="#" class="btn btn-ghost" id="lotBrochureBtn"><i class="fas fa-file-arrow-down"></i>Solicitar brochure</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="300" data-anchor-intent="tour">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1519817650390-64a93db511aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-body">
+            <h3>Discovery Tour</h3>
+            <p>La forma más rápida de entender Tres Volcanes: un recorrido guiado para que el lugar “se sienta” antes de decidir.</p>
+            <div class="card-actions">
+              <a href="#contact" class="btn btn-primary"><i class="fas fa-route"></i>Agendar tour</a>
+              <a href="#" class="btn btn-ghost"><i class="fas fa-circle-info"></i>Ver itinerario</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why here -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Por qué <span class="highlight">Tres Volcanes</span></h2>
+        <p>Esto es lo que reduce dudas y aumenta intención: autoridad, cercanía, sostenibilidad y facilidad para visitantes.</p>
+      </div>
+
+      <div class="split">
+        <div class="panel" data-aos="fade-right">
+          <h3>La decisión se siente… <span class="highlight">segura</span></h3>
+          <p style="color:var(--muted);max-width:70ch">
+            Cuando un sitio guía con claridad, el usuario percibe profesionalismo. Y cuando percibe profesionalismo, confía.
+            Aquí la experiencia está pensada como club: desde llegar hasta disfrutar.
+          </p>
+          <div class="bullets">
+            <div class="bullet"><i class="fas fa-pen-nib"></i><div><strong>Diseño legendario</strong><br><span style="color:var(--muted)">Campo diseñado por Pete Dye.</span></div></div>
+            <div class="bullet"><i class="fas fa-leaf"></i><div><strong>Sostenibilidad real</strong><br><span style="color:var(--muted)">Reconocimiento ecológico (Audubon).</span></div></div>
+            <div class="bullet"><i class="fas fa-golf-ball"></i><div><strong>Sin fricción para turistas</strong><br><span style="color:var(--muted)">Rental clubs disponibles.</span></div></div>
+            <div class="bullet"><i class="fas fa-car-side"></i><div><strong>Cerca de tu estancia</strong><br><span style="color:var(--muted)">A minutos de resorts y playas populares.</span></div></div>
+          </div>
+        </div>
+
+        <div class="panel" data-aos="fade-left">
+          <h3>Tu ruta en <span class="highlight">30 segundos</span></h3>
+          <p style="color:var(--muted)">
+            Si el visitante entiende “qué hago aquí” en 3 segundos, el resto del sitio solo confirma la elección.
+          </p>
+
+          <div style="display:grid;gap:10px;margin-top:12px">
+            <a href="#" class="btn btn-primary" id="openReservationModal"><i class="fas fa-calendar-check"></i>Reservar experiencia</a>
+            <a href="#lots" class="btn btn-ghost"><i class="fas fa-crown"></i>Explorar Signature Lots</a>
+            <a href="#contact" class="btn btn-ghost"><i class="fas fa-message"></i>Hablar con el club</a>
+          </div>
+
+          <div style="margin-top:14px;color:var(--muted);font-weight:700;font-size:.95rem">
+            Sugerencia táctica: agrega enlaces directos a “18 holes / 9 holes / twilight” y “parties & events” según el menú actual para reducir clics.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Section (kept from your concept) -->
+  <section class="section app-section" id="app">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>GolfPlay: <span class="highlight">Conecta</span> tu experiencia</h2>
+        <p>Gamificación, comunidad y retos. Ideal como “capa social” para fidelización y eventos internos del club.</p>
+      </div>
+
+      <div class="app-container">
+        <div class="app-content" data-aos="fade-right">
+          <h2>Geo-Gamification & Comunidad</h2>
+          <p>Convierte la visita en una historia: logros, retos y recompensas. Lo que se comparte, se recuerda. Y lo que se recuerda… se repite.</p>
+
+          <div class="app-features">
+            <div class="app-feature">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4 style="margin-bottom:4px">Geo-Eventos inteligentes</h4>
+                <p style="margin:0;color:rgba(255,255,255,.82)">Retos activados por zonas del campo. Momentos que se sienten “vivos”.</p>
+              </div>
+            </div>
+
+            <div class="app-feature">
+              <i class="fas fa-trophy"></i>
+              <div>
+                <h4 style="margin-bottom:4px">Ligas y duelos</h4>
+                <p style="margin:0;color:rgba(255,255,255,.82)">Rankings semanales, medallas y comunidad activa.</p>
+              </div>
+            </div>
+
+            <div class="app-feature">
+              <i class="fas fa-users"></i>
+              <div>
+                <h4 style="margin-bottom:4px">Feed social</h4>
+                <p style="margin:0;color:rgba(255,255,255,.82)">Comparte logros y conecta con otros jugadores.</p>
+              </div>
+            </div>
+
+            <div class="app-feature">
+              <i class="fas fa-gift"></i>
+              <div>
+                <h4 style="margin-bottom:4px">Recompensas reales</h4>
+                <p style="margin:0;color:rgba(255,255,255,.82)">Beneficios del club, eventos y descuentos.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#" class="btn btn-primary"><i class="fas fa-download"></i>Descargar app</a>
+            <a href="#" class="btn btn-ghost"><i class="fas fa-play"></i>Ver demo</a>
+          </div>
+        </div>
+
+        <div class="app-preview" data-aos="fade-left" data-aos-delay="150">
+          <div class="app-phone" aria-label="Vista previa GolfPlay">
+            <div class="app-screen">
+              <div style="position:absolute;top:18px;left:0;width:100%;text-align:center;color:#fff;font-weight:900;">GolfPlay</div>
+              <div style="position:absolute;top:76px;left:16px;color:var(--secondary);font-size:1.1rem;font-weight:900;">¡Reto activado!</div>
+              <div style="position:absolute;top:104px;left:16px;color:#fff;font-size:.9rem;opacity:.9;">Hoyo 7 · Green Zone</div>
+
+              <div style="position:absolute;top:150px;left:16px;right:16px;background:rgba(255,255,255,.10);border-radius:16px;padding:14px;border:1px solid rgba(255,255,255,.12)">
+                <div style="color:#fff;margin-bottom:8px">🎯 <strong>Par o mejor</strong></div>
+                <div style="color:rgba(255,255,255,.78);font-size:.82rem">+150 pts · 3 jugadores participando</div>
+              </div>
+
+              <div style="position:absolute;bottom:98px;left:16px;right:16px;color:#fff;font-size:.9rem;opacity:.9">
+                <i class="fas fa-user-friends" style="color:var(--secondary);margin-right:8px"></i>
+                María y Juan están en este hoyo
+              </div>
+
+              <div style="position:absolute;bottom:28px;left:0;width:100%;display:flex;justify-content:space-around;opacity:.95">
+                <div style="text-align:center;color:#fff"><div style="font-size:1.4rem;color:var(--secondary)">🏌️‍♂️</div><div style="font-size:.7rem">Jugar</div></div>
+                <div style="text-align:center;color:#fff"><div style="font-size:1.4rem;color:var(--secondary)">📊</div><div style="font-size:.7rem">Stats</div></div>
+                <div style="text-align:center;color:#fff"><div style="font-size:1.4rem;color:var(--secondary)">👥</div><div style="font-size:.7rem">Social</div></div>
+                <div style="text-align:center;color:#fff"><div style="font-size:1.4rem;color:var(--secondary)">🏆</div><div style="font-size:.7rem">Retos</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Lo que la gente <span class="highlight">recuerda</span></h2>
+        <p>Testimonios que elevan el valor percibido y cierran la duda antes de reservar.</p>
+      </div>
+
+      <div class="testimonial-slider swiper" data-aos="fade-up">
+        <div class="swiper-wrapper">
+          <div class="testimonial-card swiper-slide">
+            <div class="testimonial-text">
+              “Service was outstanding… Good Titleist rental clubs… superior service and tasty food.”
+            </div>
+            <div class="testimonial-author">— Nicole Sheckells</div>
+            <div style="color:var(--secondary);margin-top:8px">⭐️⭐️⭐️⭐️⭐️</div>
+          </div>
+
+          <div class="testimonial-card swiper-slide">
+            <div class="testimonial-text">
+              “Un lugar perfecto para combinar golf, comida y un día completo. Se siente como club real.”
+            </div>
+            <div class="testimonial-author">— Visitante</div>
+            <div style="color:var(--secondary);margin-top:8px">⭐️⭐️⭐️⭐️⭐️</div>
+          </div>
+
+          <div class="testimonial-card swiper-slide">
+            <div class="testimonial-text">
+              “La experiencia es integral. Llegas por una actividad… y terminas viviendo el día completo.”
+            </div>
+            <div class="testimonial-author">— Cliente recurrente</div>
+            <div style="color:var(--secondary);margin-top:8px">⭐️⭐️⭐️⭐️⭐️</div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lots -->
+  <section class="section lots-section" id="lots">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Signature <span class="highlight">Living</span> Lots</h2>
+        <p>Para quien no solo visita: construye. Lotes premium con visión de largo plazo y estilo de vida de club.</p>
+      </div>
+
+      <div class="lots-container">
+        <div class="card" data-aos="fade-up" data-aos-delay="60">
+          <div class="lot-img" style="background-image:url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-body">
+            <h3>Vistas</h3>
+            <p>El tipo de vista que hace que el silencio se sienta “caro”.</p>
+            <div class="card-actions">
+              <a href="#" class="btn btn-primary" id="lotInfoBtn1"><i class="fas fa-message"></i>Solicitar info</a>
+              <a href="#" class="btn btn-ghost"><i class="fas fa-calendar"></i>Agendar visita</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="120">
+          <div class="lot-img" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-body">
+            <h3>Ubicación</h3>
+            <p>Conectividad, comunidad y acceso: vivir cerca de todo sin perder tranquilidad.</p>
+            <div class="card-actions">
+              <a href="#" class="btn btn-primary" id="lotInfoBtn2"><i class="fas fa-message"></i>Solicitar info</a>
+              <a href="#" class="btn btn-ghost"><i class="fas fa-file"></i>Brochure</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="180">
+          <div class="lot-img" style="background-image:url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-body">
+            <h3>Seguridad</h3>
+            <p>Privacidad, orden y estándar: el lujo se nota cuando todo funciona.</p>
+            <div class="card-actions">
+              <a href="#" class="btn btn-primary" id="lotInfoBtn3"><i class="fas fa-message"></i>Solicitar info</a>
+              <a href="#" class="btn btn-ghost"><i class="fas fa-phone"></i>Llamar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>TRES VOLCANES</h3>
+          <p style="color:rgba(255,255,255,.86)">
+            Golf & Country Club en Guanacaste: un destino integral donde el visitante entiende, elige y vive el día completo.
+          </p>
+          <div class="social-links" aria-label="Redes sociales">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="X / Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>RUTAS</h3>
+          <ul>
+            <li><a href="#experiences">Experiencias</a></li>
+            <li><a href="#why">Por qué aquí</a></li>
+            <li><a href="#app">GolfPlay App</a></li>
+            <li><a href="#lots">Signature Lots</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>ALIANZAS</h3>
+          <p style="color:rgba(255,255,255,.86)">
+            Ideal para huéspedes en resorts y zonas cercanas: reserva tu experiencia y cambia playa por fairways por un día.
+          </p>
+          <a href="#" class="btn btn-primary" style="margin-top:12px"><i class="fas fa-hotel"></i>Ver hoteles socios</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>CONTACTO</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt" style="margin-right:10px;color:var(--secondary)"></i> Guanacaste, Costa Rica</li>
+            <li><i class="fas fa-phone" style="margin-right:10px;color:var(--secondary)"></i> +506 8870 3751</li>
+            <li><i class="fas fa-envelope" style="margin-right:10px;color:var(--secondary)"></i> tresvolcanesgolf@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Tres Volcanes Golf & Country Club. Todos los derechos reservados.</p>
+        <p style="margin-top:8px;">Diseño estratégico orientado a claridad, conversión y percepción premium.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div class="modal" id="reservationModal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Reservar experiencia">
+      <button class="close-modal" id="closeReservationModal" aria-label="Cerrar">&times;</button>
+      <h2 style="color:var(--primary);margin-bottom:12px">Reservar Experiencia</h2>
+      <p style="color:var(--muted);margin-bottom:16px">Completa esto y el equipo confirma contigo. Lo importante: que tu día quede perfecto.</p>
+
+      <form id="reservationForm">
+        <div class="form-group">
+          <label for="reservationType">Tipo de Experiencia</label>
+          <select id="reservationType" required>
+            <option value="">Seleccionar</option>
+            <option value="tee-time">Tee Time - Golf</option>
+            <option value="twilight">Twilight Golf</option>
+            <option value="padel">Cancha de Padel</option>
+            <option value="daypass">Pool Day Pass</option>
+            <option value="restaurant">Restaurante</option>
+            <option value="event">Evento o Celebración</option>
+            <option value="rental">Alquiler de Palos</option>
+            <option value="tour">Discovery Tour</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="reservationDate">Fecha</label>
+          <input type="date" id="reservationDate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reservationTime">Hora preferida</label>
+          <input type="time" id="reservationTime" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reservationGuests">Número de personas</label>
+          <input type="number" id="reservationGuests" min="1" max="40" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reservationName">Nombre completo</label>
+          <input type="text" id="reservationName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reservationEmail">Correo</label>
+          <input type="email" id="reservationEmail" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reservationPhone">Teléfono</label>
+          <input type="tel" id="reservationPhone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reservationNotes">Notas</label>
+          <textarea id="reservationNotes" rows="3" placeholder="¿Algo que debamos saber para que tu visita fluya mejor?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%"><i class="fas fa-check"></i>Confirmar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="lotInfoModal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Información de lotes">
+      <button class="close-modal" id="closeLotModal" aria-label="Cerrar">&times;</button>
+      <h2 style="color:var(--primary);margin-bottom:12px">Signature Living Lots</h2>
+      <p style="color:var(--muted);margin-bottom:16px">Te enviamos información y coordinamos visita. Sin presión: claridad primero.</p>
+
+      <form id="lotInfoForm">
+        <div class="form-group">
+          <label for="lotType">Tipo de interés</label>
+          <select id="lotType" required>
+            <option value="">Seleccionar</option>
+            <option value="vista">Vista</option>
+            <option value="frente">Frente / Ubicación</option>
+            <option value="residencial">Residencial</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="investmentPurpose">Propósito</label>
+          <select id="investmentPurpose" required>
+            <option value="">Seleccionar</option>
+            <option value="residencia">Residencia</option>
+            <option value="segunda">Segunda vivienda</option>
+            <option value="inversion">Inversión</option>
+            <option value="renta">Renta</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="lotBudget">Presupuesto estimado (USD)</label>
+          <select id="lotBudget" required>
+            <option value="">Seleccionar</option>
+            <option value="250-500">$250k - $500k</option>
+            <option value="500-750">$500k - $750k</option>
+            <option value="750-1000">$750k - $1M</option>
+            <option value="1m+">Más de $1M</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="lotTimeline">Horizonte</label>
+          <select id="lotTimeline" required>
+            <option value="">Seleccionar</option>
+            <option value="0-3">0-3 meses</option>
+            <option value="3-6">3-6 meses</option>
+            <option value="6-12">6-12 meses</option>
+            <option value="12+">Más de 12 meses</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="lotName">Nombre</label>
+          <input type="text" id="lotName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lotEmail">Correo</label>
+          <input type="email" id="lotEmail" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lotPhone">Teléfono</label>
+          <input type="tel" id="lotPhone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lotMessage">Preguntas</label>
+          <textarea id="lotMessage" rows="4" placeholder="¿Financiamiento, planos, visita, ubicación exacta, servicios?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%"><i class="fas fa-paper-plane"></i>Solicitar</button>
+        <p style="text-align:center;margin-top:12px;font-size:.92rem;color:var(--muted)">
+          Respuesta en menos de 24 horas.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // AOS
+      AOS.init({ duration: 750, once: true, offset: 90 });
+
+      // Swiper
+      const swiper = new Swiper('.testimonial-slider', {
+        loop: true,
+        autoplay: { delay: 5200, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true }
+      });
+
+      // Header scroll
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 90);
+      });
+
+      // Mobile menu
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mainNav = document.getElementById('mainNav');
+      mobileMenuBtn.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+        mobileMenuBtn.innerHTML = mainNav.classList.contains('active')
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+      document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      }));
+
+      // Smooth anchor offset
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const id = this.getAttribute('href');
+          if (!id || id === '#') return;
+          const target = document.querySelector(id);
+          if (!target) return;
+          e.preventDefault();
+          window.scrollTo({ top: target.offsetTop - 78, behavior: 'smooth' });
+        });
+      });
+
+      // Modals
+      const reservationModal = document.getElementById('reservationModal');
+      const lotInfoModal = document.getElementById('lotInfoModal');
+
+      const openReservationModal = () => {
+        reservationModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        reservationModal.setAttribute('aria-hidden','false');
+      };
+      const closeReservationModal = () => {
+        reservationModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        reservationModal.setAttribute('aria-hidden','true');
+      };
+      const openLotModal = () => {
+        lotInfoModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        lotInfoModal.setAttribute('aria-hidden','false');
+      };
+      const closeLotModal = () => {
+        lotInfoModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        lotInfoModal.setAttribute('aria-hidden','true');
+      };
+
+      document.getElementById('reserveBtn')?.addEventListener('click', (e) => { e.preventDefault(); openReservationModal(); });
+      document.getElementById('openReservationModal')?.addEventListener('click', (e) => { e.preventDefault(); openReservationModal(); });
+      document.getElementById('bookGolfBtn')?.addEventListener('click', (e) => { e.preventDefault(); openReservationModal(); document.getElementById('reservationType').value = 'tee-time'; });
+
+      document.getElementById('closeReservationModal')?.addEventListener('click', closeReservationModal);
+      document.getElementById('closeLotModal')?.addEventListener('click', closeLotModal);
+
+      [document.getElementById('lotInfoBtn1'), document.getElementById('lotInfoBtn2'), document.getElementById('lotInfoBtn3'), document.getElementById('lotBrochureBtn')]
+        .forEach(btn => btn?.addEventListener('click', (e) => { e.preventDefault(); openLotModal(); }));
+
+      window.addEventListener('click', (e) => {
+        if (e.target === reservationModal) closeReservationModal();
+        if (e.target === lotInfoModal) closeLotModal();
+      });
+
+      // Forms (demo)
+      document.getElementById('reservationForm')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Gracias. El equipo confirmará su reserva por correo o WhatsApp.');
+        closeReservationModal();
+        e.target.reset();
+      });
+      document.getElementById('lotInfoForm')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Gracias. Le enviaremos la información y coordinaremos visita.');
+        closeLotModal();
+        e.target.reset();
+      });
+
+      // Intent system (the “x3” improvement: clarity + personalization feel)
+      const intentData = {
+        golf: {
+          bg: "https://images.unsplash.com/photo-1587174486073-ae7c6e292c90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+          title: "Hoy es día de <span class='highlight'>golf</span>.",
+          lead: "Reserva tu tee time (18/9 o Twilight) y juega sin fricción. Si vienes de vacaciones, también puedes rentar palos y simplemente disfrutar.",
+          primary: { text: "Reservar tee time", icon: "fa-golf-ball-tee", type: "tee-time" },
+          secondary: { text: "Ver opciones de juego", href: "#experiences" }
+        },
+        daypass: {
+          bg: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+          title: "Un día de <span class='highlight'>club</span> sin prisa.",
+          lead: "Piscina, relax y ambiente premium. Ideal para familias y grupos que quieren un día completo con sensación de resort.",
+          primary: { text: "Solicitar Day Pass", icon: "fa-person-swimming", type: "daypass" },
+          secondary: { text: "Ver experiencias", href: "#experiences" }
+        },
+        restaurant: {
+          bg: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+          title: "Cuando la comida se vuelve <span class='highlight'>momento</span>.",
+          lead: "Reserva en el Club House y cierra el día con conversación, comodidad y un ambiente que se siente cuidado.",
+          primary: { text: "Reservar mesa", icon: "fa-utensils", type: "restaurant" },
+          secondary: { text: "Ubicación y contacto", href: "#contact" }
+        },
+        events: {
+          bg: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+          title: "Tu evento merece un lugar que <span class='highlight'>se note</span>.",
+          lead: "Parties, celebraciones y corporativo. Te ayudamos a que todo fluya: logística, ambiente y experiencia completa.",
+          primary: { text: "Cotizar evento", icon: "fa-champagne-glasses", type: "event" },
+          secondary: { text: "Hablar con el equipo", href: "#contact" }
+        },
+        lots: {
+          bg: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+          title: "De visitar… a <span class='highlight'>vivir aquí</span>.",
+          lead: "Signature Living Lots: inversión y estilo de vida de club. Recibe información y agenda una visita sin presión.",
+          primary: { text: "Solicitar info de lotes", icon: "fa-map-location-dot", openLot: true },
+          secondary: { text: "Ver Signature Lots", href: "#lots" }
+        },
+        tour: {
+          bg: "https://images.unsplash.com/photo-1519817650390-64a93db511aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+          title: "La forma más clara de entenderlo: <span class='highlight'>Discovery Tour</span>.",
+          lead: "Un recorrido para que el lugar se sienta antes de decidir. Perfecto si vienes por primera vez.",
+          primary: { text: "Agendar tour", icon: "fa-route", type: "tour" },
+          secondary: { text: "Contactar", href: "#contact" }
+        }
+      };
+
+      const heroBg = document.getElementById('heroBg');
+      const heroTitle = document.getElementById('heroTitle');
+      const heroLead = document.getElementById('heroLead');
+      const heroPrimaryCta = document.getElementById('heroPrimaryCta');
+      const heroSecondaryCta = document.getElementById('heroSecondaryCta');
+      const intentCta = document.getElementById('intentCta');
+      const intentAlt = document.getElementById('intentAlt');
+
+      function applyIntent(key){
+        const data = intentData[key];
+        if(!data) return;
+
+        // active state
+        document.querySelectorAll('.intent-btn').forEach(b => b.classList.toggle('active', b.dataset.intent === key));
+
+        // background switch
+        heroBg.classList.add('is-switching');
+        setTimeout(() => {
+          heroBg.style.backgroundImage = `url('${data.bg}')`;
+          heroBg.classList.remove('is-switching');
+        }, 180);
+
+        // copy
+        heroTitle.innerHTML = data.title;
+        heroLead.textContent = data.lead;
+
+        // primary CTA behavior
+        const icon = data.primary.icon || "fa-calendar-check";
+        heroPrimaryCta.innerHTML = `<i class="fas ${icon}"></i>${data.primary.text}`;
+        intentCta.innerHTML = `<i class="fas ${icon}"></i>${data.primary.text}`;
+
+        heroPrimaryCta.onclick = (e) => {
+          e.preventDefault();
+          if(data.primary.openLot){ openLotModalFromIntent(); return; }
+          openReservationModal();
+          if(data.primary.type){
+            const typeEl = document.getElementById('reservationType');
+            if(typeEl) typeEl.value = data.primary.type;
+          }
+        };
+        intentCta.onclick = heroPrimaryCta.onclick;
+
+        // secondary CTA link
+        heroSecondaryCta.textContent = data.secondary.text;
+        heroSecondaryCta.setAttribute('href', data.secondary.href);
+        intentAlt.textContent = "Hablar con el club";
+        intentAlt.setAttribute('href', "#contact");
+      }
+
+      function openLotModalFromIntent(){
+        openLotModal();
+      }
+
+      document.querySelectorAll('.intent-btn').forEach(btn => {
+        btn.addEventListener('click', () => applyIntent(btn.dataset.intent));
+      });
+
+      // quick-actions intent jumps
+      document.querySelectorAll('[data-intentjump]').forEach(a => {
+        a.addEventListener('click', () => {
+          const key = a.getAttribute('data-intentjump');
+          if(key && intentData[key]) applyIntent(key);
+        });
+      });
+
+      // default
+      applyIntent('golf');
+    });
+  </script>
+</body>
+</html>
